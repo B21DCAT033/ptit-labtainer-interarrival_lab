@@ -1,0 +1,19 @@
+name: interarrival
+type: topology
+topology: bridge
+network: interarrival_net
+
+container: sender
+  image: ubuntu:20.04
+  cmd: /bin/bash
+
+container: receiver
+  image: ubuntu:20.04
+  cmd: /bin/bash
+
+container: traffic
+  image: ubuntu:20.04
+  cmd: /bin/bash
+
+link: sender:eth0 traffic:eth0
+link: traffic:eth1 receiver:eth0

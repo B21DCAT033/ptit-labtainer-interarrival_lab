@@ -1,0 +1,20 @@
+Lab: Inter-arrival Time Covert Channel
+
+Mô tả:
+- Sender gửi các packet TCP với interpacket gap encode bit 0/1.
+- Receiver đo thời gian đến và decode.
+
+Bước thực hiện:
+1. Trong terminal container `sender`, chạy:
+   ```bash
+   ./run_sender.sh 101001
+   ```
+2. Trong terminal container `receiver`, chạy:
+   ```bash
+   ./run_receiver.sh
+   ```
+3. Quan sát file `decoded.txt` và so sánh với chuỗi gốc.
+
+Bài tập mở rộng:
+- Thay đổi chuỗi bits hoặc nâng lên multiple channel.
+- Thêm noise container generate traffic ngẫu nhiên.
